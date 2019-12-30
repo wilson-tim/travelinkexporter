@@ -26,7 +26,9 @@ namespace TravelinkExporter
 
 		private Label label3;
 
-		private Button button3;
+        private Label label4;
+
+        private Button button3;
 
 		private Button button4;
 
@@ -36,13 +38,17 @@ namespace TravelinkExporter
 
 		private GroupBox Logging;
 
-		private CheckBox checkBox1;
+        private GroupBox groupBox4;
+
+        private CheckBox checkBox1;
 
 		private Button button5;
 
 		private TextBox textBox1;
 
-		public Options()
+        private TextBox textBox4;
+
+        public Options()
 		{
 			this.InitializeComponent();
 		}
@@ -52,7 +58,8 @@ namespace TravelinkExporter
 			Settings.Default.ExportList = this.textBox2.Text;
 			Settings.Default.FoldertoExport = this.textBox3.Text;
 			Settings.Default.Logfile = this.textBox1.Text;
-			if (!this.checkBox1.Checked)
+            Settings.Default.CommandTimeout = int.Parse(this.textBox4.Text);
+            if (!this.checkBox1.Checked)
 			{
 				Settings.Default.IncludeErrors = false;
 			}
@@ -141,142 +148,221 @@ namespace TravelinkExporter
 
 		private void InitializeComponent()
 		{
-			this.button1 = new Button();
-			this.button2 = new Button();
-			this.textBox2 = new TextBox();
-			this.textBox3 = new TextBox();
-			this.label2 = new Label();
-			this.label3 = new Label();
-			this.button3 = new Button();
-			this.button4 = new Button();
-			this.groupBox1 = new GroupBox();
-			this.groupBox2 = new GroupBox();
-			this.Logging = new GroupBox();
-			this.textBox1 = new TextBox();
-			this.button5 = new Button();
-			this.checkBox1 = new CheckBox();
-			this.groupBox1.SuspendLayout();
-			this.groupBox2.SuspendLayout();
-			this.Logging.SuspendLayout();
-			base.SuspendLayout();
-			this.button1.Location = new Point(15, 340);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(75, 23);
-			this.button1.TabIndex = 0;
-			this.button1.Text = "Save";
-			this.button1.UseVisualStyleBackColor = true;
-			this.button1.Click += new EventHandler(this.button1_Click);
-			this.button2.Location = new Point(326, 340);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(75, 23);
-			this.button2.TabIndex = 1;
-			this.button2.Text = "Cancel";
-			this.button2.UseVisualStyleBackColor = true;
-			this.button2.Click += new EventHandler(this.button2_Click);
-			this.textBox2.Location = new Point(13, 41);
-			this.textBox2.Name = "textBox2";
-			this.textBox2.Size = new System.Drawing.Size(295, 20);
-			this.textBox2.TabIndex = 3;
-			this.textBox3.Location = new Point(13, 46);
-			this.textBox3.Name = "textBox3";
-			this.textBox3.Size = new System.Drawing.Size(294, 20);
-			this.textBox3.TabIndex = 4;
-			this.label2.AutoSize = true;
-			this.label2.Location = new Point(10, 25);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(83, 13);
-			this.label2.TabIndex = 6;
-			this.label2.Text = "Config file ( xml )";
-			this.label3.AutoSize = true;
-			this.label3.Location = new Point(10, 30);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(84, 13);
-			this.label3.TabIndex = 7;
-			this.label3.Text = "Current directory";
-			this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25f, FontStyle.Bold, GraphicsUnit.Point, 0);
-			this.button3.Location = new Point(329, 41);
-			this.button3.Name = "button3";
-			this.button3.Size = new System.Drawing.Size(30, 20);
-			this.button3.TabIndex = 8;
-			this.button3.Text = "...";
-			this.button3.UseVisualStyleBackColor = true;
-			this.button3.Click += new EventHandler(this.button3_Click);
-			this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25f, FontStyle.Bold, GraphicsUnit.Point, 0);
-			this.button4.Location = new Point(329, 46);
-			this.button4.Name = "button4";
-			this.button4.Size = new System.Drawing.Size(30, 19);
-			this.button4.TabIndex = 9;
-			this.button4.Text = "...";
-			this.button4.UseVisualStyleBackColor = true;
-			this.button4.Click += new EventHandler(this.button4_Click);
-			this.groupBox1.Controls.Add(this.button3);
-			this.groupBox1.Controls.Add(this.textBox2);
-			this.groupBox1.Controls.Add(this.label2);
-			this.groupBox1.Location = new Point(15, 12);
-			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(386, 96);
-			this.groupBox1.TabIndex = 11;
-			this.groupBox1.TabStop = false;
-			this.groupBox1.Text = "Company Tables / Views to export";
-			this.groupBox2.Controls.Add(this.button4);
-			this.groupBox2.Controls.Add(this.label3);
-			this.groupBox2.Controls.Add(this.textBox3);
-			this.groupBox2.Location = new Point(15, 114);
-			this.groupBox2.Name = "groupBox2";
-			this.groupBox2.Size = new System.Drawing.Size(386, 95);
-			this.groupBox2.TabIndex = 12;
-			this.groupBox2.TabStop = false;
-			this.groupBox2.Text = "Export Directory";
-			this.Logging.Controls.Add(this.checkBox1);
-			this.Logging.Controls.Add(this.button5);
-			this.Logging.Controls.Add(this.textBox1);
-			this.Logging.Location = new Point(15, 215);
-			this.Logging.Name = "Logging";
-			this.Logging.Size = new System.Drawing.Size(386, 100);
-			this.Logging.TabIndex = 13;
-			this.Logging.TabStop = false;
-			this.Logging.Text = "Logging";
-			this.textBox1.Location = new Point(13, 51);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(294, 20);
-			this.textBox1.TabIndex = 0;
-			this.button5.Location = new Point(329, 51);
-			this.button5.Name = "button5";
-			this.button5.Size = new System.Drawing.Size(30, 20);
-			this.button5.TabIndex = 1;
-			this.button5.Text = "---";
-			this.button5.UseVisualStyleBackColor = true;
-			this.button5.Click += new EventHandler(this.button5_Click);
-			this.checkBox1.AutoSize = true;
-			this.checkBox1.Location = new Point(13, 28);
-			this.checkBox1.Name = "checkBox1";
-			this.checkBox1.Size = new System.Drawing.Size(140, 17);
-			this.checkBox1.TabIndex = 2;
-			this.checkBox1.Text = "Enable Full Error logging";
-			this.checkBox1.UseVisualStyleBackColor = true;
-			this.checkBox1.CheckedChanged += new EventHandler(this.checkBox1_CheckedChanged);
-			base.AutoScaleDimensions = new SizeF(6f, 13f);
-			base.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			base.ClientSize = new System.Drawing.Size(417, 386);
-			base.Controls.Add(this.Logging);
-			base.Controls.Add(this.button2);
-			base.Controls.Add(this.button1);
-			base.Controls.Add(this.groupBox1);
-			base.Controls.Add(this.groupBox2);
-			base.MaximizeBox = false;
-			this.MaximumSize = new System.Drawing.Size(425, 413);
-			base.MinimizeBox = false;
-			this.MinimumSize = new System.Drawing.Size(425, 413);
-			base.Name = "Options";
-			this.Text = "Set Program Options";
-			base.Load += new EventHandler(this.On_Load);
-			this.groupBox1.ResumeLayout(false);
-			this.groupBox1.PerformLayout();
-			this.groupBox2.ResumeLayout(false);
-			this.groupBox2.PerformLayout();
-			this.Logging.ResumeLayout(false);
-			this.Logging.PerformLayout();
-			base.ResumeLayout(false);
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.Logging = new System.Windows.Forms.GroupBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.Logging.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(15, 430);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Save";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(326, 430);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Cancel";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(13, 41);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(294, 20);
+            this.textBox2.TabIndex = 3;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(13, 46);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(294, 20);
+            this.textBox3.TabIndex = 4;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(13, 35);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(294, 20);
+            this.textBox4.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(10, 25);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(83, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Config file ( xml )";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(10, 30);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(84, 13);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Current directory";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(10, 35);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(84, 13);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Command Timeout";
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(329, 41);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(30, 20);
+            this.button3.TabIndex = 8;
+            this.button3.Text = "...";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button4
+            // 
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(329, 46);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(30, 19);
+            this.button4.TabIndex = 9;
+            this.button4.Text = "...";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.button3);
+            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Location = new System.Drawing.Point(15, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(386, 96);
+            this.groupBox1.TabIndex = 11;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Company Tables / Views to export";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.button4);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.textBox3);
+            this.groupBox2.Location = new System.Drawing.Point(15, 114);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(386, 95);
+            this.groupBox2.TabIndex = 12;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Export Directory";
+            // 
+            // Logging
+            // 
+            this.Logging.Controls.Add(this.checkBox1);
+            this.Logging.Controls.Add(this.button5);
+            this.Logging.Controls.Add(this.textBox1);
+            this.Logging.Location = new System.Drawing.Point(15, 215);
+            this.Logging.Name = "Logging";
+            this.Logging.Size = new System.Drawing.Size(386, 100);
+            this.Logging.TabIndex = 13;
+            this.Logging.TabStop = false;
+            this.Logging.Text = "Logging";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.textBox4);
+            this.groupBox4.Location = new System.Drawing.Point(15, 316);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(386, 100);
+            //this.groupBox4.TabIndex = 14;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Command Timeout";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(13, 28);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(140, 17);
+            this.checkBox1.TabIndex = 2;
+            this.checkBox1.Text = "Enable Full Error logging";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(329, 51);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(30, 20);
+            this.button5.TabIndex = 1;
+            this.button5.Text = "---";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(13, 51);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(294, 20);
+            this.textBox1.TabIndex = 0;
+            // 
+            // Options
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(425, 500);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.Logging);
+            this.Controls.Add(this.groupBox4);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(425, 500);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(425, 500);
+            this.Name = "Options";
+            this.Text = "Set Program Options";
+            this.Load += new System.EventHandler(this.On_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.Logging.ResumeLayout(false);
+            this.Logging.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.ResumeLayout(false);
+
 		}
 
 		private void On_Load(object sender, EventArgs e)
@@ -284,7 +370,8 @@ namespace TravelinkExporter
 			this.textBox2.Text = Settings.Default.ExportList.ToString();
 			this.textBox3.Text = Settings.Default.FoldertoExport.ToString();
 			this.textBox1.Text = Settings.Default.Logfile.ToString();
-			if (Settings.Default.IncludeErrors.Equals(true))
+            this.textBox4.Text = Settings.Default.CommandTimeout.ToString();
+            if (Settings.Default.IncludeErrors.Equals(true))
 			{
 				this.checkBox1.Checked = true;
 			}

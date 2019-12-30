@@ -4,6 +4,7 @@ using System.Data.Common;
 using System.Data.SqlClient;
 using System.IO;
 using System.Text;
+using TravelinkExporter.Properties;
 
 namespace TravelinkExporter
 {
@@ -78,6 +79,7 @@ namespace TravelinkExporter
 			{
 				string str = string.Concat("SELECT COUNT(*) from ", this.TableName);
 				System.Data.SqlClient.SqlCommand sqlCommand = new System.Data.SqlClient.SqlCommand(str, this.conn);
+                sqlCommand.CommandTimeout = Settings.Default.CommandTimeout;
 				SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
 				sqlDataReader.Read();
 				int num = Convert.ToInt32(sqlDataReader[0].ToString());

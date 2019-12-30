@@ -233,6 +233,8 @@ namespace TravelinkExporter
 
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+
 			this.progressBar1 = new ProgressBar();
 			this.menuStrip1 = new MenuStrip();
 			this.fileToolStripMenuItem = new ToolStripMenuItem();
@@ -254,8 +256,8 @@ namespace TravelinkExporter
 			this.progressBar1.Size = new System.Drawing.Size(375, 23);
 			this.progressBar1.TabIndex = 0;
 			ToolStripItemCollection items = this.menuStrip1.Items;
- 			ToolStripItem[] toolStripItemArray = new ToolStripItem[] { this.fileToolStripMenuItem, this.helpToolStripMenuItem };
- 			items.AddRange(toolStripItemArray);
+			ToolStripItem[] toolStripItemArray = new ToolStripItem[] { this.fileToolStripMenuItem, this.helpToolStripMenuItem };
+			items.AddRange(toolStripItemArray);
 			this.menuStrip1.Location = new Point(0, 0);
 			this.menuStrip1.Name = "menuStrip1";
 			this.menuStrip1.Size = new System.Drawing.Size(399, 24);
@@ -335,7 +337,8 @@ namespace TravelinkExporter
 			this.MaximumSize = new System.Drawing.Size(407, 277);
 			this.MinimumSize = new System.Drawing.Size(407, 277);
 			base.Name = "Form1";
-			this.Text = "TravelinkExporter";
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+			this.Text = "ODBC Data Exporter";
 			base.Load += new EventHandler(this.Form1_Load);
 			this.menuStrip1.ResumeLayout(false);
 			this.menuStrip1.PerformLayout();
@@ -398,5 +401,10 @@ namespace TravelinkExporter
 		}
 
 		private delegate void SetTextCallback(int percentage, string spercentage);
+
+		private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+		{
+
+		}
 	}
 }

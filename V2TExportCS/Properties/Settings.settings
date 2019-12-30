@@ -1,0 +1,21 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="TravelinkExporter.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ExportList" Type="System.String" Scope="User">
+      <Value Profile="(Default)">D:\ExtractFiles\YMT\ExporterConf.xml</Value>
+    </Setting>
+    <Setting Name="FoldertoExport" Type="System.String" Scope="User">
+      <Value Profile="(Default)">D:\ExtractFiles\YMT\YMT_Data</Value>
+    </Setting>
+    <Setting Name="IncludeErrors" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="Logfile" Type="System.String" Scope="User">
+      <Value Profile="(Default)">D:\ExtractFiles\YMT\Logs\DataExporter.log</Value>
+    </Setting>
+    <Setting Name="CommandTimeout" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">30</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
