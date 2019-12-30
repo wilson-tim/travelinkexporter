@@ -233,9 +233,7 @@ namespace TravelinkExporter
 
 		private void InitializeComponent()
 		{
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-
-			this.progressBar1 = new ProgressBar();
+            this.progressBar1 = new ProgressBar();
 			this.menuStrip1 = new MenuStrip();
 			this.fileToolStripMenuItem = new ToolStripMenuItem();
 			this.startToolStripMenuItem = new ToolStripMenuItem();
@@ -255,17 +253,19 @@ namespace TravelinkExporter
 			this.progressBar1.Name = "progressBar1";
 			this.progressBar1.Size = new System.Drawing.Size(375, 23);
 			this.progressBar1.TabIndex = 0;
-			ToolStripItemCollection items = this.menuStrip1.Items;
-			ToolStripItem[] toolStripItemArray = new ToolStripItem[] { this.fileToolStripMenuItem, this.helpToolStripMenuItem };
-			items.AddRange(toolStripItemArray);
+			// ToolStripItemCollection items = this.menuStrip1.Items;
+			// ToolStripItem[] toolStripItemArray = new ToolStripItem[] { this.fileToolStripMenuItem, this.helpToolStripMenuItem };
+			// items.AddRange(toolStripItemArray);
+			this.menuStrip1.Items.AddRange(new ToolStripItem[] { this.fileToolStripMenuItem, this.helpToolStripMenuItem });
 			this.menuStrip1.Location = new Point(0, 0);
 			this.menuStrip1.Name = "menuStrip1";
 			this.menuStrip1.Size = new System.Drawing.Size(399, 24);
 			this.menuStrip1.TabIndex = 3;
 			this.menuStrip1.Text = "menuStrip1";
-			ToolStripItemCollection dropDownItems = this.fileToolStripMenuItem.DropDownItems;
-			toolStripItemArray = new ToolStripItem[] { this.startToolStripMenuItem, this.optionsToolStripMenuItem, this.exitToolStripMenuItem };
-			dropDownItems.AddRange(toolStripItemArray);
+			// ToolStripItemCollection dropDownItems = this.fileToolStripMenuItem.DropDownItems;
+			// toolStripItemArray = new ToolStripItem[] { this.startToolStripMenuItem, this.optionsToolStripMenuItem, this.exitToolStripMenuItem };
+			// dropDownItems.AddRange(toolStripItemArray);
+			this.fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { this.startToolStripMenuItem, this.optionsToolStripMenuItem, this.exitToolStripMenuItem });
 			this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
 			this.fileToolStripMenuItem.Size = new System.Drawing.Size(35, 20);
 			this.fileToolStripMenuItem.Text = "File";
@@ -281,9 +281,10 @@ namespace TravelinkExporter
 			this.exitToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
 			this.exitToolStripMenuItem.Text = "Exit";
 			this.exitToolStripMenuItem.Click += new EventHandler(this.exitToolStripMenuItem_Click);
-			ToolStripItemCollection ToolStripItemCollection = this.helpToolStripMenuItem.DropDownItems;
-			toolStripItemArray = new ToolStripItem[] { this.aboutToolStripMenuItem };
-			ToolStripItemCollection.AddRange(toolStripItemArray);
+			// ToolStripItemCollection ToolStripItemCollection = this.helpToolStripMenuItem.DropDownItems;
+			// toolStripItemArray = new ToolStripItem[] { this.aboutToolStripMenuItem };
+			// ToolStripItemCollection.AddRange(toolStripItemArray);
+			this.helpToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { this.aboutToolStripMenuItem });
 			this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
 			this.helpToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
 			this.helpToolStripMenuItem.Text = "Help";
@@ -337,8 +338,7 @@ namespace TravelinkExporter
 			this.MaximumSize = new System.Drawing.Size(407, 277);
 			this.MinimumSize = new System.Drawing.Size(407, 277);
 			base.Name = "Form1";
-			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-			this.Text = "ODBC Data Exporter";
+			this.Text = "TravelinkExporter";
 			base.Load += new EventHandler(this.Form1_Load);
 			this.menuStrip1.ResumeLayout(false);
 			this.menuStrip1.PerformLayout();
@@ -401,10 +401,5 @@ namespace TravelinkExporter
 		}
 
 		private delegate void SetTextCallback(int percentage, string spercentage);
-
-		private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-		{
-
-		}
 	}
 }

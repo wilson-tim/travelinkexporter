@@ -297,16 +297,6 @@ namespace TravelinkExporter
             this.Logging.TabStop = false;
             this.Logging.Text = "Logging";
             // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.textBox4);
-            this.groupBox4.Location = new System.Drawing.Point(15, 316);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(386, 100);
-            //this.groupBox4.TabIndex = 14;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Command Timeout";
-            // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
@@ -320,11 +310,12 @@ namespace TravelinkExporter
             // 
             // button5
             // 
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.Location = new System.Drawing.Point(329, 51);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(30, 20);
+            this.button5.Size = new System.Drawing.Size(30, 19);
             this.button5.TabIndex = 1;
-            this.button5.Text = "---";
+            this.button5.Text = "...";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -335,11 +326,21 @@ namespace TravelinkExporter
             this.textBox1.Size = new System.Drawing.Size(294, 20);
             this.textBox1.TabIndex = 0;
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.textBox4);
+            this.groupBox4.Location = new System.Drawing.Point(15, 316);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(386, 100);
+            this.groupBox4.TabIndex = 14;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Command Timeout";
+            // 
             // Options
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(425, 500);
+            this.ClientSize = new System.Drawing.Size(409, 461);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
